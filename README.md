@@ -1,3 +1,7 @@
+> **This repo has moved.** The template now lives in the AI Marketing Playbook:
+> https://github.com/yoderman94/ai-marketing-playbook/tree/main/claude-code/b2b-blog-pipeline
+> This repo is archived and won't get updates.
+
 # B2B Service Blog Pipeline
 
 A [Claude Code](https://code.claude.com) workflow that researches, writes, fact-checks and packages SEO blog posts aimed at B2B service business owners. It's built for marketing agencies that serve one vertical (HVAC, plumbing, roofing, landscaping, commercial cleaning, IT services and so on) and write in their own voice, under their own byline.
