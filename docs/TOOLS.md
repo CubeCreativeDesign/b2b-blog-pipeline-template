@@ -211,7 +211,7 @@ Puts a time limit on each stage (`BLOG_STAGE_TIMEOUT`, default `3h`), so one hun
    ```
 3. **Shell use:** `scripts/searxng-query.sh "your query"`. It starts the Docker service if it's down.
 
-- **Known issue:** public engines sometimes answer SearXNG with a CAPTCHA, and the instance then returns no results. Check with `curl "http://localhost:8888/search?q=test&format=json" | jq '.unresponsive_engines'`. Turn engines on or off in `settings.yml` (SearXNG docs below).
+- **Engines get blocked.** Search engines CAPTCHA or block SearXNG over time, and a blocked engine fails silently: queries just return fewer results, or none. With SearXNG's defaults, a test machine got zero results (Google silent, DuckDuckGo and Startpage CAPTCHAs). The shipped `settings.yml` turns those off and uses `duckduckgo web`, `yep`, `yandex` and `fynd`, which returned 43-63 relevant results per query on 2026-10-09. Check what's failing with `curl "http://localhost:8888/search?q=test+query&format=json" | jq '.unresponsive_engines'`, test one engine with `&engines=<name>`, edit the `engines:` list in `settings.yml`, and `docker compose restart searxng`.
 - **If missing:** Phase B2 logs it and continues.
 - **Sources:** https://docs.searxng.org/admin/settings/index.html, https://github.com/ihor-sokoliuk/mcp-searxng
 

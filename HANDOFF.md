@@ -2,7 +2,7 @@
 
 State of the template, what is verified, and the choices that look like bugs but are deliberate. Read this before you change the scripts or the stage files.
 
-Version: 2.0.0 (2026-10-09). Public release.
+Version: 2.0.1 (2026-10-09). Public.
 
 ---
 
@@ -57,7 +57,7 @@ When you clone it, reset `VERSION` to `1.0.0` and start a fresh `CHANGELOG.md`.
 
 - One topic seed (commercial HVAC maintenance contracts), fictional agency, `no-gemini`, short sleeps.
 - Stages 0-10 all completed; 1 of 1 job; exit 0. About 27 minutes; Claude cost about $12.90 (Stage 2 alone $4.80).
-- Stage 0: Exa 3 searches + 6 fetches, Tavily 4 searches + 1 extract; SearXNG returned nothing (engine CAPTCHAs on the test machine); bundle 12.9 KB.
+- Stage 0: Exa 3 searches + 6 fetches, Tavily 4 searches + 1 extract; SearXNG returned nothing (engine CAPTCHAs on the test machine; fixed in 2.0.1 with a tested engine set); bundle 12.9 KB.
 - Stage 5 renamed the slug; the slug map carried the Stage 0 research into `posts/2026-11-04-win-more-maintenance-contracts/`.
 - QC: PASS. Stage 8: all 6 external sources load, all 16 claims match. Its only blocker was the fake `.example` domain.
 - Allowlist mode: one refusal (a DataForSEO MCP the test machine had, outside the list); the stage noted it and went on.

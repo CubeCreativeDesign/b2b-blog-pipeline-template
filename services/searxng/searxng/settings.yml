@@ -28,3 +28,34 @@ search:
 
 ui:
   static_use_hash: true
+
+# Engines. Search engines block or CAPTCHA SearXNG instances over time, and a
+# blocked engine fails silently: the query just comes back with fewer (or zero)
+# results. This set returned relevant results for multi-word business queries
+# from a residential connection on 2026-10-09. Test any engine on its own with:
+#   curl "http://localhost:8888/search?q=test+query&format=json&engines=<name>" \
+#     | jq '.results | length, .unresponsive_engines'
+# and switch engines on or off here, then: docker compose restart searxng
+engines:
+  # Off: CAPTCHAs, access denied, or no or irrelevant results in testing.
+  - name: google
+    disabled: true
+  - name: duckduckgo
+    disabled: true
+  - name: startpage
+    disabled: true
+  - name: bing
+    disabled: true
+  - name: brave
+    disabled: true
+  - name: gmx               # worked, then CAPTCHA'd within the hour
+    disabled: true
+  # On: returned relevant results.
+  - name: duckduckgo web
+    disabled: false
+  - name: yep
+    disabled: false
+  - name: yandex
+    disabled: false
+  - name: fynd
+    disabled: false

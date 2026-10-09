@@ -9,6 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 > `VERSION` to `1.0.0` and start a fresh changelog for that vertical. The
 > entries below track the template itself, not any cloned pipeline.
 
+## [2.0.1] - 2026-10-09
+
+### Fixed
+- `services/searxng/searxng/settings.yml`: SearXNG's default engines returned no results from a residential connection (Google silent, DuckDuckGo and Startpage CAPTCHAs). It now ships with a tested engine set (`duckduckgo web`, `yep`, `yandex`, `fynd`) and says how to re-test engines. `docs/TOOLS.md` explains the failure mode.
+
 ## [2.0.0] - 2026-10-09
 
 First public release. The template now runs on its own from a fresh clone, on
